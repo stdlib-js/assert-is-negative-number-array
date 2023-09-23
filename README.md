@@ -42,13 +42,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import isNegativeNumberArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-negative-number-array@deno/mod.js';
+import isNegativeNumberArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-negative-number-array@v0.1.0-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { objects, primitives } from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-negative-number-array@deno/mod.js';
+import { objects, primitives } from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-negative-number-array@v0.1.0-deno/mod.js';
 ```
 
 #### isNegativeNumberArray( value )
@@ -113,7 +113,7 @@ bool = isNegativeNumberArray.objects( [ -1.0, -5.0, -10.0 ] );
 
 ```javascript
 import Number from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-ctor@deno/mod.js';
-import isNegativeNumberArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-negative-number-array@deno/mod.js';
+import isNegativeNumberArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-negative-number-array@v0.1.0-deno/mod.js';
 
 var bool = isNegativeNumberArray( [ -5.0, -0.2, -3.9 ] );
 // returns true
