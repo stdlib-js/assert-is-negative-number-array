@@ -1,7 +1,7 @@
 /**
 * @license Apache-2.0
 *
-* Copyright (c) 2018 The Stdlib Authors.
+* Copyright (c) 2023 The Stdlib Authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -21,81 +21,13 @@
 // MODULES //
 
 var tape = require( 'tape' );
-var Float32Array = require( '@stdlib/array-float32' );
-var Number = require( '@stdlib/number-ctor' );
-var isNegativeNumberArray = require( './../../dist' );
+var main = require( './../../dist' );
 
 
 // TESTS //
 
-tape( 'main export is a function', function test( t ) {
+tape( 'main export is defined', function test( t ) {
 	t.ok( true, __filename );
-	t.strictEqual( typeof isNegativeNumberArray, 'function', 'main export is a function' );
-	t.end();
-});
-
-tape( 'the function tests for an array-like object containing only negative numbers', function test( t ) {
-	var arr;
-
-	arr = [ -5.0, new Number( -5 ), -1.0 ];
-	t.equal( isNegativeNumberArray( arr ), true, 'returns true' );
-
-	arr = [ -5.0, '-3', null ];
-	t.equal( isNegativeNumberArray( arr ), false, 'returns false' );
-
-	arr = {
-		'length': 2,
-		'0': -3.14,
-		'1': -2.0
-	};
-	t.equal( isNegativeNumberArray( arr ), true, 'returns true' );
-
-	arr = new Float32Array( [ -5.0, -1.5 ] );
-	t.equal( isNegativeNumberArray( arr ), true, 'returns true' );
-
-	t.end();
-});
-
-tape( 'the function provides a method to test for an array-like object having only negative number primitives', function test( t ) {
-	var arr;
-
-	arr = [ -5.0, -2.0 ];
-	t.equal( isNegativeNumberArray.primitives( arr ), true, 'returns true' );
-
-	arr = [ new Number( -5 ), -1.0, -1.0 ];
-	t.equal( isNegativeNumberArray.primitives( arr ), false, 'returns false' );
-
-	arr = {
-		'length': 2,
-		'0': -3.14,
-		'1': -1.0
-	};
-	t.equal( isNegativeNumberArray.primitives( arr ), true, 'returns true' );
-
-	arr = new Float32Array( [ -5.0, -1.5 ] );
-	t.equal( isNegativeNumberArray.primitives( arr ), true, 'returns true' );
-
-	t.end();
-});
-
-tape( 'the function provides a method to test for an array-like object having only negative number objects', function test( t ) {
-	var arr;
-
-	arr = [ new Number( -5 ), new Number( -5 ) ];
-	t.equal( isNegativeNumberArray.objects( arr ), true, 'returns true' );
-
-	arr = [ -5.0, -1.0 ];
-	t.equal( isNegativeNumberArray.objects( arr ), false, 'returns false' );
-
-	arr = {
-		'length': 2,
-		'0': new Number( -3.14 ),
-		'1': new Number( -2.0 )
-	};
-	t.equal( isNegativeNumberArray.objects( arr ), true, 'returns true' );
-
-	arr = new Float32Array( [ -5.0, -1.5 ] );
-	t.equal( isNegativeNumberArray.objects( arr ), false, 'returns false' );
-
+	t.strictEqual( main !== void 0, true, 'main export is defined' );
 	t.end();
 });
